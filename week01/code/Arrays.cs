@@ -8,12 +8,21 @@ public static class Arrays
     /// <returns>array of doubles that are the multiples of the supplied number</returns>
     public static double[] MultiplesOf(double number, int length)
     {
-        // TODO Problem 1 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+        // Step 1: Create an array with enough space to store the requested
+        // number of multiples.
+        // Step 2: Loop through every position in the array.
+        // Step 3: Multiply the starting number by 1, 2, 3, and so on.
+        // Step 4: Store each multiple in the corresponding array position.
+        // Step 5: Return the completed array.
 
-        return []; // replace this return statement with your own
+        double[] result = new double[length];
+
+        for (int i = 0; i < length; i++)
+        {
+            result[i] = number * (i + 1);
+        }
+
+        return result;
     }
 
     /// <summary>
@@ -25,9 +34,18 @@ public static class Arrays
     /// </summary>
     public static void RotateListRight(List<int> data, int amount)
     {
-        // TODO Problem 2 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+        // Step 1: Determine where the last "amount" values begin.
+        // Step 2: Copy those values into a temporary list.
+        // Step 3: Remove those values from their original location.
+        // Step 4: Insert the saved values at the beginning of the list.
+        // Step 5: The original list is now rotated to the right.
+
+        int startIndex = data.Count - amount;
+
+        List<int> valuesToMove = data.GetRange(startIndex, amount);
+
+        data.RemoveRange(startIndex, amount);
+
+        data.InsertRange(0, valuesToMove);
     }
 }
